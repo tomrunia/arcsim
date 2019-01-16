@@ -111,6 +111,7 @@ void display_replay (const vector<string> &args) {
     ::inprefix = args[0];
     ::outprefix = args.size()>1 ? args[1] : "";
     ::frameskip = 1;
+
     if (!::outprefix.empty())
         ensure_existing_directory(::outprefix);
     char config_backup_name[256];

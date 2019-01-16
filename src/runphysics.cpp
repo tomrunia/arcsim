@@ -44,10 +44,16 @@ static fstream timingfile;
 
 Simulation sim;
 int frame;
-const int NUM_FRAMES = 600;
 Timer fps;
 
 void copy_file (const string &input, const string &output);
+
+bool is_number(const std::string &s) {
+    std::string::const_iterator it = s.begin();
+    while (it != s.end() && std::isdigit(*it))
+        ++it;
+    return !s.empty() && it == s.end();
+}
 
 void init_physics (const string &json_file, string outprefix,
                    bool is_reloading) {
@@ -106,7 +112,7 @@ void save (const Simulation &sim, int frame) {
     save_obstacle_transforms(sim.obstacles, frame, sim.time);
 }
 
-void sim_step() {
+void sim_step(const int num_frames) {
     fps.tick();
     advance_step(sim);
 
@@ -129,27 +135,33 @@ void sim_step() {
     if (sim.time >= sim.end_time || sim.frame >= sim.end_frame)
         exit(EXIT_SUCCESS);
 
-    if (sim.frame == NUM_FRAMES)
+    if (sim.frame == num_frames)
         exit(EXIT_SUCCESS);
 }
 
-void offline_loop() {
+void offline_loop(const int num_frames) {
     while (true)
-        sim_step();
+        sim_step(num_frames);
 }
 
 void run_physics (const vector<string> &args) {
-    if (args.size() != 1 && args.size() != 2) {
+    if (args.size() == 0 || args.size() > 3) {
         cout << "Runs the simulation in batch mode." << endl;
         cout << "Arguments:" << endl;
-        cout << "    <scene-file>: JSON file describing the simulation setup"
-             << endl;
+        cout << "    <scene-file>: JSON file describing the simulation setup" << endl;
         cout << "    <out-dir> (optional): Directory to save output in" << endl;
+        cout << "    <num_frames> (optional): Number of frames to render" << endl;
         exit(EXIT_FAILURE);
     }
 
-    // Runia, hard-code end-time
-    cout << "WARNING: running for maximum of 600 meshes..." << endl;
+    // Check whether the maximum number of frames to render is set.
+    int num_frames = DEFAULT_NUM_FRAMES;
+    if (is_number(args[args.size() - 1]))
+    {
+        // Final parameter is integer, this is the number of frames to render for
+        num_frames = atoi(args[args.size() - 1].c_str());
+        cout << "Found 'number of frames' parameter, rendering " << num_frames << " frames." << endl;
+    }
 
     string json_file = args[0];
     string outprefix = args.size()>1 ? args[1] : "";
@@ -158,7 +170,8 @@ void run_physics (const vector<string> &args) {
     init_physics(json_file, outprefix, false);
     if (!outprefix.empty())
         save(sim, 0);
-    offline_loop();
+
+    offline_loop(num_frames);
 }
 
 void init_resume(const vector<string> &args) {
@@ -188,7 +201,7 @@ void resume_physics (const vector<string> &args) {
         exit(EXIT_FAILURE);
     }
     init_resume(args);
-    offline_loop();
+    offline_loop(DEFAULT_NUM_FRAMES);
 }
 
 void copy_file (const string &input, const string &output) {

@@ -31,10 +31,12 @@
 #include <string>
 #include <vector>
 
+const int DEFAULT_NUM_FRAMES = 600;
+
 void save (const Simulation &sim, int frame);
 void init_physics (const std::string &json_file, std::string outprefix, bool is_reloading);
 void init_resume(const std::vector<std::string> &args);
-void sim_step();
+void sim_step(const int num_frames=DEFAULT_NUM_FRAMES);
 void run_physics (const std::vector<std::string> &args);
 void resume_physics (const std::vector<std::string> &args);
 

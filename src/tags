@@ -43,6 +43,7 @@ Collision	simulation.hpp	/^    enum {Proximity, Physics, StrainLimiting, Collisi
 Constraint	constraint.hpp	/^struct Constraint {$/;"	s
 Construct	bvh.cpp	/^DeformBVHTree::Construct()$/;"	f	class:DeformBVHTree
 DDE_HPP	dde.hpp	28;"	d
+DEFAULT_NUM_FRAMES	runphysics.hpp	/^const int DEFAULT_NUM_FRAMES = 600;$/;"	v
 DEFXYR	tensormax.cpp	113;"	d	file:
 DEFXYR	tensormax.cpp	117;"	d	file:
 DISPLAYPHYSICS_HPP	displayphysics.hpp	28;"	d
@@ -153,7 +154,6 @@ NEAROBS_HPP	nearobs.hpp	28;"	d
 NEXT	util.hpp	41;"	d
 NLConOpt	optimization.hpp	/^struct NLConOpt { \/\/ nonlinear constrained optimization problem$/;"	s
 NLOpt	optimization.hpp	/^struct NLOpt { \/\/ nonlinear optimization problem$/;"	s
-NUM_FRAMES	runphysics.cpp	/^const int NUM_FRAMES = 600;$/;"	v
 NearPoint	nearobs.cpp	/^    NearPoint (double d, const Vec3 &x): d(d), x(x) {}$/;"	f	struct:NearPoint
 NearPoint	nearobs.cpp	/^struct NearPoint {$/;"	s	file:
 Node	mesh.hpp	/^    Node () {}$/;"	f	struct:Node
@@ -788,6 +788,7 @@ is_in	util.hpp	/^template <typename T> inline bool is_in (const T &x, const T *x
 is_in	util.hpp	/^template <typename T> inline bool is_in (const T &x, const std::vector<T> &xs) {$/;"	f
 is_in	util.hpp	/^template <typename T> inline bool is_in (const T *x, T* const *xs, int n=3) {$/;"	f
 is_inside	geometry.cpp	/^bool is_inside(const Vec2& point, const Face* f) {$/;"	f
+is_number	runphysics.cpp	/^bool is_number(const std::string &s) {$/;"	f
 is_seam_or_boundary	util.cpp	/^bool is_seam_or_boundary (const Edge *e) {$/;"	f
 is_seam_or_boundary	util.cpp	/^bool is_seam_or_boundary (const Face *f) {$/;"	f
 is_seam_or_boundary	util.cpp	/^bool is_seam_or_boundary (const Node *n) {$/;"	f
@@ -987,7 +988,7 @@ obs_meshes	collisionutil.cpp	/^const vector<Mesh*> *meshes, *obs_meshes;$/;"	v
 obstacle_meshes	simulation.hpp	/^    std::vector<Mesh*> cloth_meshes, obstacle_meshes;$/;"	m	struct:Simulation
 obstacle_metric	dynamicremesh.cpp	/^Mat2x2 obstacle_metric (const Face *face, const vector<Plane> &planes) {$/;"	f
 obstacles	simulation.hpp	/^    std::vector<Obstacle> obstacles;$/;"	m	struct:Simulation
-offline_loop	runphysics.cpp	/^void offline_loop() {$/;"	f
+offline_loop	runphysics.cpp	/^void offline_loop(const int num_frames) {$/;"	f
 offset	display.cpp	/^    Vec2 offset;$/;"	m	struct:View	file:
 old_meshes	separate.cpp	/^static const vector<Mesh*> *old_meshes;$/;"	v	file:
 old_pos	separate.cpp	/^Vec3 old_pos (const Face *face, const Bary &b) {$/;"	f
@@ -1279,7 +1280,7 @@ shrink_face	display.cpp	/^void shrink_face (const Face *face, double shrink_fact
 signed_ee_distance	geometry.cpp	/^double signed_ee_distance (const Vec3 &x0, const Vec3 &x1,$/;"	f
 signed_vf_distance	geometry.cpp	/^double signed_vf_distance (const Vec3 &x,$/;"	f
 sim	runphysics.cpp	/^Simulation sim;$/;"	v
-sim_step	runphysics.cpp	/^void sim_step() {$/;"	f
+sim_step	runphysics.cpp	/^void sim_step(const int num_frames) {$/;"	f
 singular_value_decomposition	vectors.cpp	/^template <int m, int n> SVD<m,n> singular_value_decomposition (const Mat<m,n> &A) {$/;"	f
 singular_value_decomposition	vectors.cpp	/^template<> SVD<3,2> singular_value_decomposition<3,2> (const Mat<3,2> &A) {$/;"	f
 size	bah.cpp	/^Vec2 Box::size () const {$/;"	f	class:Box

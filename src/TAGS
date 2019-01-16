@@ -1073,27 +1073,28 @@ struct RemeshOp {RemeshOp35,1445
     std::vector<Face*> added_faces, removed_faces;removed_faces39,1616
     bool empty () {return added_faces.empty() && removed_faces.empty();}empty40,1667
 
-runphysics.cpp,963
+runphysics.cpp,1013
 static string outprefix;outprefix42,1569
 static fstream timingfile;timingfile43,1594
 Simulation sim;sim45,1622
 int frame;frame46,1638
-const int NUM_FRAMES = 600;NUM_FRAMES47,1649
-Timer fps;fps48,1677
-void init_physics (const string &json_file, string outprefix,init_physics52,1750
-static void save (const vector<Mesh*> &meshes, int frame) {save74,2669
-static void save_obstacle_transforms (const vector<Obstacle> &obs, int frame,save_obstacle_transforms79,2850
-static void save_timings () {save_timings92,3403
-void save (const Simulation &sim, int frame) {save104,3821
-void sim_step() {sim_step109,3968
-void offline_loop() {offline_loop136,4674
-void run_physics (const vector<string> &args) {run_physics141,4736
-void init_resume(const vector<string> &args) {init_resume164,5530
-void resume_physics (const vector<string> &args) {resume_physics181,6272
-void copy_file (const string &input, const string &output) {copy_file194,6719
+Timer fps;fps47,1649
+bool is_number(const std::string &s) {is_number51,1722
+void init_physics (const string &json_file, string outprefix,init_physics58,1913
+static void save (const vector<Mesh*> &meshes, int frame) {save80,2832
+static void save_obstacle_transforms (const vector<Obstacle> &obs, int frame,save_obstacle_transforms85,3013
+static void save_timings () {save_timings98,3566
+void save (const Simulation &sim, int frame) {save110,3984
+void sim_step(const int num_frames) {sim_step115,4131
+void offline_loop(const int num_frames) {offline_loop142,4857
+void run_physics (const vector<string> &args) {run_physics147,4949
+void init_resume(const vector<string> &args) {init_resume177,6126
+void resume_physics (const vector<string> &args) {resume_physics194,6868
+void copy_file (const string &input, const string &output) {copy_file207,7333
 
-runphysics.hpp,46
+runphysics.hpp,109
 #define RUNPHYSICS_HPPRUNPHYSICS_HPP28,1321
+const int DEFAULT_NUM_FRAMES = 600;DEFAULT_NUM_FRAMES34,1408
 
 separate.cpp,2818
 static const int max_iter = 100;max_iter39,1528
