@@ -2,8 +2,8 @@
 
 # Runia (2019-03) | Originally:
 #	all: lib/libalglib.a lib/libjson.a lib/libtaucs.a
-# But these can all be installed using apt-get
-all: lib/libtaucs.a
+# But libjson can all be installed using apt-get
+all: lib/libalglib.a lib/libtaucs.a
 
 lib/libalglib.a:
 	cd alglib/cpp/src && g++ -c *.cpp && ar rcs libalglib.a *.o
