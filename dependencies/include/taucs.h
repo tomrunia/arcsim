@@ -19,7 +19,7 @@
 /* We are compiling a Cilk source with a Cilk compiler */
 
 
-#include <cilk.h>
+#include <cilk/cilk.h>
 #include <cilk-lib.h>
 
 #define taucs_cilk   cilk

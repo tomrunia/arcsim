@@ -5,7 +5,7 @@
 
 #include <stdio.h> 
 #include <stdlib.h> 
-#include <cilk.h> 
+#include <cilk/cilk.h> 
 
 #pragma lang -C
 
