@@ -246,55 +246,55 @@ typedef void (*BVHCallback) (const Face *face0, const Face *face1);BVHCallback
 template <typename Primitive> bool is_free (const Primitive *p) {is_free73,3058
 
 conf.cpp,3477
-template <int n> void parse (Vec<n> &v, const Json::Value &json) {parse48,1771
-template <typename T> void parse (T &x, const Json::Value &json, const T &x0) {parse55,1983
-template <typename T> void parse (vector<T> &v, const Json::Value &json) {parse62,2138
-void load_json (const string &configFilename, Simulation &sim) {load_json79,2856
-void complain (const Json::Value &json, const string &expected) {complain142,5587
-void parse (bool &b, const Json::Value &json) {parse147,5750
-void parse (int &n, const Json::Value &json) {parse151,5874
-void parse (double &x, const Json::Value &json) {parse155,6000
-void parse (string &s, const Json::Value &json) {parse159,6128
-struct Range {Range164,6258
-    double &min, &max;min165,6273
-    double &min, &max;max165,6273
-    Range (double &min, double &max): min(min), max(max) {}Range166,6296
-void parse (Range range, const Json::Value &json, Vec2 range0) {parse169,6360
-struct Box {Box180,6630
-    Vec2 umin, umax;umin181,6643
-    Vec2 umin, umax;umax181,6643
-    Box () {}Box182,6664
-    Box (const Vec2 &umin, const Vec2 &umax): umin(umin), umax(umax) {}Box183,6678
-void parse (Box &box, const Json::Value &json, const Box &box0) {parse186,6754
-struct Velocity {Vec3 v, w; Vec3 o;};Velocity202,7146
-struct Velocity {Vec3 v, w; Vec3 o;};v202,7146
-struct Velocity {Vec3 v, w; Vec3 o;};w202,7146
-struct Velocity {Vec3 v, w; Vec3 o;};o202,7146
-void parse (Cloth &cloth, const Json::Value &json) {parse206,7286
-void parse (Transformation& transform, const Json::Value &json) {parse224,7928
-void parse (Velocity &velocity, const Json::Value &json) {parse233,8277
-void apply_velocity (Mesh &mesh, const Velocity &vel) {apply_velocity239,8484
-void parse (Cloth::Material *&material, const Json::Value &json) {parse246,8735
-void parse (Cloth::Remeshing &remeshing, const Json::Value &json) {parse272,9948
-void parse_motions (vector<Motion> &motions, const Json::Value &json) {parse_motions285,10471
-void parse (Motion &motion, const Json::Value &json) {parse307,11269
-void parse (Motion::Point &mp, const Json::Value &json) {parse314,11526
-void parse_handles (vector<Handle*> &hans, const Json::Value &jsons,parse_handles333,12094
-void parse_handle (vector<Handle*> &hans, const Json::Value &json,parse_handle351,12897
-void parse_node_handle (vector<Handle*> &hans, const Json::Value &json,parse_node_handle377,13844
-void parse_circle_handle (vector<Handle*> &hans, const Json::Value &json,parse_circle_handle411,14945
-void parse_glue_handle (vector<Handle*> &hans, const Json::Value &json,parse_glue_handle429,15591
-void parse_obstacles (vector<Obstacle> &obstacles, const Json::Value &json,parse_obstacles449,16253
-void parse_obstacle (Obstacle &obstacle, const Json::Value &json,parse_obstacle473,17079
-void parse_morphs (vector<Morph> &morphs, const Json::Value &json,parse_morphs492,17816
-void parse_morph (Morph &morph, const Json::Value &json,parse_morph499,18059
-void parse (Wind &wind, const Json::Value &json) {parse529,19174
-void parse (Magic &magic, const Json::Value &json) {parse535,19367
-#define PARSE_MAGIC(PARSE_MAGIC536,19420
-#undef PARSE_MAGICPARSE_MAGIC547,19892
-void load_material_data (Cloth::Material &material, const string &filename) {load_material_data555,20034
-void parse (StretchingSamples &samples, const Json::Value &json) {parse571,20613
-void parse (BendingData &data, const Json::Value &json) {parse581,20932
+template <int n> void parse (Vec<n> &v, const Json::Value &json) {parse48,1779
+template <typename T> void parse (T &x, const Json::Value &json, const T &x0) {parse55,1991
+template <typename T> void parse (vector<T> &v, const Json::Value &json) {parse62,2146
+void load_json (const string &configFilename, Simulation &sim) {load_json79,2864
+void complain (const Json::Value &json, const string &expected) {complain142,5595
+void parse (bool &b, const Json::Value &json) {parse147,5758
+void parse (int &n, const Json::Value &json) {parse151,5882
+void parse (double &x, const Json::Value &json) {parse155,6008
+void parse (string &s, const Json::Value &json) {parse159,6136
+struct Range {Range164,6266
+    double &min, &max;min165,6281
+    double &min, &max;max165,6281
+    Range (double &min, double &max): min(min), max(max) {}Range166,6304
+void parse (Range range, const Json::Value &json, Vec2 range0) {parse169,6368
+struct Box {Box180,6638
+    Vec2 umin, umax;umin181,6651
+    Vec2 umin, umax;umax181,6651
+    Box () {}Box182,6672
+    Box (const Vec2 &umin, const Vec2 &umax): umin(umin), umax(umax) {}Box183,6686
+void parse (Box &box, const Json::Value &json, const Box &box0) {parse186,6762
+struct Velocity {Vec3 v, w; Vec3 o;};Velocity202,7154
+struct Velocity {Vec3 v, w; Vec3 o;};v202,7154
+struct Velocity {Vec3 v, w; Vec3 o;};w202,7154
+struct Velocity {Vec3 v, w; Vec3 o;};o202,7154
+void parse (Cloth &cloth, const Json::Value &json) {parse206,7294
+void parse (Transformation& transform, const Json::Value &json) {parse224,7936
+void parse (Velocity &velocity, const Json::Value &json) {parse233,8285
+void apply_velocity (Mesh &mesh, const Velocity &vel) {apply_velocity239,8492
+void parse (Cloth::Material *&material, const Json::Value &json) {parse246,8743
+void parse (Cloth::Remeshing &remeshing, const Json::Value &json) {parse272,9956
+void parse_motions (vector<Motion> &motions, const Json::Value &json) {parse_motions285,10479
+void parse (Motion &motion, const Json::Value &json) {parse307,11277
+void parse (Motion::Point &mp, const Json::Value &json) {parse314,11534
+void parse_handles (vector<Handle*> &hans, const Json::Value &jsons,parse_handles333,12102
+void parse_handle (vector<Handle*> &hans, const Json::Value &json,parse_handle351,12905
+void parse_node_handle (vector<Handle*> &hans, const Json::Value &json,parse_node_handle377,13852
+void parse_circle_handle (vector<Handle*> &hans, const Json::Value &json,parse_circle_handle411,14953
+void parse_glue_handle (vector<Handle*> &hans, const Json::Value &json,parse_glue_handle429,15599
+void parse_obstacles (vector<Obstacle> &obstacles, const Json::Value &json,parse_obstacles449,16261
+void parse_obstacle (Obstacle &obstacle, const Json::Value &json,parse_obstacle473,17087
+void parse_morphs (vector<Morph> &morphs, const Json::Value &json,parse_morphs492,17824
+void parse_morph (Morph &morph, const Json::Value &json,parse_morph499,18067
+void parse (Wind &wind, const Json::Value &json) {parse529,19182
+void parse (Magic &magic, const Json::Value &json) {parse535,19375
+#define PARSE_MAGIC(PARSE_MAGIC536,19428
+#undef PARSE_MAGICPARSE_MAGIC547,19900
+void load_material_data (Cloth::Material &material, const string &filename) {load_material_data555,20042
+void parse (StretchingSamples &samples, const Json::Value &json) {parse571,20621
+void parse (BendingData &data, const Json::Value &json) {parse581,20940
 
 conf.hpp,34
 #define CONF_HPPCONF_HPP28,1315
@@ -600,19 +600,19 @@ struct GlueHandle: public Handle {GlueHandle69,2479
     std::vector<Node*> get_nodes () {get_nodes72,2591
 
 io.cpp,1079
-void get_valid_line (istream &in, string &line) {get_valid_line43,1566
-void triangle_to_obj (const string &inname, const string &outname) {triangle_to_obj49,1711
-void load_obj (Mesh &mesh, const string &filename) {load_obj91,3095
-void load_objs (vector<Mesh*> &meshes, const string &prefix) {load_objs170,6143
-static double angle (const Vec3 &x0, const Vec3 &x1, const Vec3 &x2) {angle175,6326
-vector<Face*> triangulate (const vector<Vert*> &verts) {triangulate181,6514
-void save_obj (const Mesh &mesh, const string &filename) {save_obj210,7539
-void save_objs (const vector<Mesh*> &meshes, const string &prefix) {save_objs262,9683
-void save_transformation (const Transformation &tr, const string &filename) {save_transformation267,9872
-void save_screenshot (const string &filename) {save_screenshot288,10685
-void flip_image (int w, int h, unsigned char *pixels) {flip_image317,11697
-void save_png (const char *filename, int width, int height,save_png324,11936
-void ensure_existing_directory (const std::string &path) {ensure_existing_directory369,13608
+void get_valid_line (istream &in, string &line) {get_valid_line43,1574
+void triangle_to_obj (const string &inname, const string &outname) {triangle_to_obj49,1719
+void load_obj (Mesh &mesh, const string &filename) {load_obj91,3103
+void load_objs (vector<Mesh*> &meshes, const string &prefix) {load_objs170,6151
+static double angle (const Vec3 &x0, const Vec3 &x1, const Vec3 &x2) {angle175,6334
+vector<Face*> triangulate (const vector<Vert*> &verts) {triangulate181,6522
+void save_obj (const Mesh &mesh, const string &filename) {save_obj210,7547
+void save_objs (const vector<Mesh*> &meshes, const string &prefix) {save_objs262,9691
+void save_transformation (const Transformation &tr, const string &filename) {save_transformation267,9880
+void save_screenshot (const string &filename) {save_screenshot288,10693
+void flip_image (int w, int h, unsigned char *pixels) {flip_image317,11705
+void save_png (const char *filename, int width, int height,save_png324,11944
+void ensure_existing_directory (const std::string &path) {ensure_existing_directory369,13616
 
 io.hpp,30
 #define IO_HPPIO_HPP28,1313

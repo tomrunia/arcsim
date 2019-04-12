@@ -115,7 +115,9 @@ inline void debug_save_spmat (const SpMat<double> &A) {
                  << "} -> " << aij;
         }
     }
-    file << "}]" << file;
+
+    // Runia, 2019-04: Line fix
+    file << "}]"; // << file;
 }
 
 #endif
