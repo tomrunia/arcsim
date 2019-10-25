@@ -1,5 +1,3 @@
-// Flag blowing in the wind
-// Narain et al. 2012, Figure 8
 {
     "frame_time": 0.04,
     "frame_steps": 8,
@@ -26,5 +24,8 @@
     "handles": [{"nodes": [0,3]}],
     "gravity": [0, 0, -9.8],
     "wind": {"velocity": [10, 0, 0]},
-    "magic": {"repulsion_thickness": 10e-3, "collision_stiffness": 1e6}
+    "magic": {
+        "repulsion_thickness": 10e-3, 
+        "collision_stiffness": 1e6
+    }
 }
